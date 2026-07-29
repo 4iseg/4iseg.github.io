@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4iSEG — Ciberseguridad y hacking ético</title>
+<meta name="description" content="Pentesting ofensivo, respuesta a incidentes y hardening de seguridad para pymes, corporaciones y administraciones. Haz el test de hábitos digitales de 4iSEG.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="scanlines" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="logo">
+    <span class="logo-chevron">&gt;</span>
+    <span>4i<span class="accent">_</span>SEG</span>
+    <span class="logo-cursor blink-cursor" aria-hidden="true"></span>
+  </div>
+  <nav class="site-nav">
+    <a href="#servicios">./servicios</a>
+    <a href="#riesgo">./riesgo</a>
+    <a href="#test-seguridad">./test_seguridad</a>
+    <a href="#contacto" class="nav-cta">./ATACAR_AHORA</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="alert-badge"><span class="dot blink"></span>ALERTA: 1 CIBERATAQUE A PYME CADA 11 SEGUNDOS</div>
+    <h1 class="hero-title glitch-wrap">
+      <span class="g1" aria-hidden="true">HACKEAMOS TU EMPRESA</span>
+      <span class="g2" aria-hidden="true">HACKEAMOS TU EMPRESA</span>
+      <span class="real">HACKEAMOS TU EMPRESA</span><br>
+      <span class="real accent-text">ANTES DE QUE LO HAGA<br>OTRO.</span>
+    </h1>
+    <p class="hero-copy"><span class="accent-text">$</span> pentesting real, respuesta a incidentes 24/7 y blindaje total de tu infraestructura. Sin powerpoints. Sin excusas. Resultados.</p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn btn-primary">Quiero mi auditoría gratis &gt;&gt;</a>
+      <a href="#servicios" class="btn btn-outline">ver_servicios.sh</a>
+    </div>
+  </div>
+
+  <div class="terminal-mock">
+    <div class="terminal-bar">
+      <span class="tl-dot red"></span><span class="tl-dot amber"></span><span class="tl-dot green"></span>
+      <span class="terminal-title">4iseg_scan.sh — bash</span>
+    </div>
+    <div class="terminal-body">
+      <div>$ ./scan --target=tu_empresa.com</div>
+      <div class="dim">[OK] puertos abiertos.......... 7 críticos</div>
+      <div class="dim">[OK] endpoints sin parchear.... 12</div>
+      <div class="red-text">[!!] superficie de ataque...... ALTA</div>
+      <div class="fg-text">&gt; contacta con 4iSEG antes de que otro lo haga<span class="cursor-block blink-cursor" aria-hidden="true"></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="test-seguridad" class="quiz-section">
+  <div class="quiz-grid-bg" aria-hidden="true"></div>
+
+  <div class="quiz-header">
+    <div class="eyebrow">// ESCÁNER DE HÁBITOS DIGITALES/</div>
+    <h2 class="hero-title-sm">¿PROBAMOS TU SEGURIDAD?</h2>
+    <p class="quiz-lead">10 preguntas. 2 minutos. Vamos a comprobar cuántas puertas estás dejando abiertas.</p>
+    <div class="terminal-line">root@4iseg:~$ ./scan_human_surface --target=visitor<span class="cursor-block blink-cursor" aria-hidden="true"></span></div>
+  </div>
+
+  <div class="quiz-shell">
+    <span class="corner corner-tl" aria-hidden="true"></span>
+    <span class="corner corner-tr" aria-hidden="true"></span>
+    <span class="corner corner-bl" aria-hidden="true"></span>
+    <span class="corner corner-br" aria-hidden="true"></span>
+
+    <div class="terminal-bar">
+      <span class="tl-dot red"></span><span class="tl-dot amber"></span><span class="tl-dot green"></span>
+      <span class="terminal-title">human_surface_scan.sh — bash</span>
+      <span class="coords" aria-hidden="true">X:042 Y:118</span>
+    </div>
+
+    <div id="stageIntro" class="stage">
+      <div class="intro-body">
+        <div class="warning-tag">ADVERTENCIA: EL RESULTADO PODRÍA HERIR TU CONFIANZA DIGITAL.</div>
+        <button id="btnStart" class="btn btn-primary" type="button">&gt; INICIAR_ESCANEO</button>
+      </div>
+    </div>
+
+    <div id="stageQuiz" class="stage quiz-body-grid" hidden>
+      <div class="quiz-main">
+        <div class="quiz-topline">
+          <span id="qNumberLabel">[01/10]</span>
+          <span>EXPOSICIÓN: <span id="exposureLevel" class="exposure-value">BAJA</span></span>
+        </div>
+        <div id="progressBar" class="progress-bar"></div>
+        <h3 id="questionTitle" class="question-title"></h3>
+        <div id="optionsList" class="options-list" role="radiogroup" aria-label="Opciones de respuesta"></div>
+        <div id="diagnosticBox" class="diagnostic-box" role="status" aria-live="polite" hidden>
+          <span id="diagTag" class="diag-tag"></span><span id="diagText"></span>
+        </div>
+        <div class="quiz-nav">
+          <button id="btnPrev" class="btn btn-ghost" type="button">&lt; ANTERIOR</button>
+          <button id="btnNext" class="btn btn-primary" type="button" disabled>SIGUIENTE &gt;</button>
+        </div>
+      </div>
+      <div class="quiz-log" aria-hidden="true">
+        <div class="log-title">LOG</div>
+        <div id="logLines"></div>
+      </div>
+    </div>
+
+    <div id="stageScanning" class="stage" hidden>
+      <div id="scanLines" class="scan-lines"></div>
+    </div>
+
+    <div id="stageResult" class="stage" hidden>
+      <div class="result-tag">[SCAN COMPLETED]</div>
+      <div id="bandTag" class="band-tag"></div>
+      <p id="bandDesc" class="band-desc"></p>
+      <div class="score-bar"><div id="scoreFill" class="score-fill"></div></div>
+      <div class="result-counts">
+        <div><span id="secureCount" class="count-green">0</span> <span class="count-label">SEGURAS</span></div>
+        <div><span id="improvableCount" class="count-amber">0</span> <span class="count-label">MEJORABLES</span></div>
+        <div><span id="dangerousCount" class="count-red">0</span> <span class="count-label">PELIGROSAS</span></div>
+      </div>
+      <div id="vulnsBlock" class="vulns-block" hidden>
+        <div class="vulns-title">TOP VULNERABILIDADES DETECTADAS</div>
+        <div id="recommendations"></div>
+      </div>
+      <p class="disclaimer">Resultado orientativo. Este cuestionario no sustituye una auditoría profesional de ciberseguridad.</p>
+      <div class="result-actions">
+        <button id="btnReset" class="btn btn-ghost" type="button">REPETIR_ESCANEO</button>
+        <a href="#contacto" class="btn btn-primary">SOLICITAR_AUDITORÍA PROFESIONAL</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-row">
+  <div class="stat"><div class="stat-value">10+</div><div class="stat-label">AÑOS EN LA TRINCHERA</div></div>
+  <div class="stat"><div class="stat-value">200+</div><div class="stat-label">EMPRESAS BLINDADAS</div></div>
+  <div class="stat"><div class="stat-value">24/7</div><div class="stat-label">SOC ACTIVO</div></div>
+  <div class="stat"><div class="stat-value">&lt;1h</div><div class="stat-label">RESPUESTA A INCIDENTE</div></div>
+</section>
+
+<section id="servicios" class="services-section">
+  <div class="section-head">
+    <div class="eyebrow">// SERVICIOS/</div>
+    <h2 class="section-title">Arsenal completo de defensa</h2>
+    <p class="section-lead">Cada servicio, diseñado para cerrar una puerta que ahora mismo está abierta.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-id">[01]</div><h3>Pentesting ofensivo</h3><p>Atacamos tus sistemas como lo haría un ciberdelincuente, antes de que lo haga uno de verdad.</p></div>
+    <div class="service-card"><div class="service-id">[02]</div><h3>Respuesta a incidentes</h3><p>Contención y recuperación en caliente cuando el reloj corre en tu contra.</p></div>
+    <div class="service-card"><div class="service-id">[03]</div><h3>Red team 24/7</h3><p>Monitorización y detección continua de intrusiones en tiempo real.</p></div>
+    <div class="service-card"><div class="service-id">[04]</div><h3>Ingeniería social</h3><p>Ponemos a prueba a tu equipo con phishing simulado y ataques dirigidos.</p></div>
+    <div class="service-card"><div class="service-id">[05]</div><h3>Cumplimiento ENS/RGPD</h3><p>Blindaje normativo sin dolores de cabeza, para pyme, corporación o administración.</p></div>
+    <div class="service-card"><div class="service-id">[06]</div><h3>Hardening cloud</h3><p>Cerramos cada puerta trasera en tu infraestructura cloud e híbrida.</p></div>
+  </div>
+</section>
+
+<section id="riesgo" class="riesgo-section">
+  <div class="section-head">
+    <div class="eyebrow">// EL RIESGO ES REAL/</div>
+    <h2 class="section-title">Mientras lees esto, alguien está probando tu contraseña</h2>
+  </div>
+  <div class="diffs-grid">
+    <div class="diff-card"><div class="diff-title">ATAQUES DIARIOS</div><div class="diff-desc">Cientos de bots escanean tu IP ahora mismo.</div></div>
+    <div class="diff-card"><div class="diff-title">COSTE DE UNA BRECHA</div><div class="diff-desc">De media, mucho más que prevenirla.</div></div>
+    <div class="diff-card"><div class="diff-title">TIEMPO DE DETECCIÓN</div><div class="diff-desc">Sin SOC 24/7, semanas sin saberlo.</div></div>
+    <div class="diff-card"><div class="diff-title">ERROR HUMANO</div><div class="diff-desc">La mayoría de brechas empiezan con un clic.</div></div>
+  </div>
+</section>
+
+<section id="contacto" class="contact-section">
+  <div class="contact-bg" aria-hidden="true"></div>
+  <div class="contact-inner">
+    <h2 class="section-title">No esperes a la brecha.<br><span class="accent-text">Actúa ahora.</span></h2>
+    <p class="section-lead">Auditoría de seguridad gratuita y sin compromiso. 30 minutos para descubrir lo que un atacante ya sabe de ti.</p>
+    <div class="contact-actions">
+      <a href="mailto:info@4iseg.com" class="btn btn-primary">./ejecutar_auditoria</a>
+      <a href="tel:+34626419431" class="btn btn-outline">626 419 431</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-logo">&gt; 4i<span class="accent-text">_</span>SEG</div>
+  <div class="footer-copy">© 2026 4iSEG. root@security:~$</div>
+  <a href="https://4iseg.com/politica-privacidad/" class="footer-link">politica-privacidad.txt</a>
+</footer>
+
+<script src="js/script.js" defer></script>
+</body>
+</html>
